@@ -4,7 +4,8 @@ CC = cc
 FT_PRINTF = ./ft_printf/libftprintf.a
 SRC = ./get_next_line/get_next_line.c \
 	./get_next_line/get_next_line_utils.c  \
-	push_swap.c split.c free.c
+	push_swap.c split.c free.c\
+	linkedlists.c
 OBJC =  $(SRC:.c=.o)
 
 all: $(NAME)

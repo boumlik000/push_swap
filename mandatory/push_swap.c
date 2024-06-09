@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 10:28:25 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/05/15 17:07:35 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/06/09 15:03:32 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,15 @@
 
 int main(int ac, char **av)
 {
-    // (void)av;
-    (void)ac;
-    if (ac != 2)
+    (void)av;
+    // (void)ac;
+    if (ac > 1)
     {
-        ft_printf("lol");
-        exit(1);   
+        t_list *stack_a = NULL;
+        
     }
-    char **tmp = ft_split(av[1],' ');
-    int i = 0 ;
-    while (tmp[i])
-    {
-        printf("%s\t%d\n",tmp[i],i);
-        i++;
-    }
-    free_array_double(tmp); 
+    
+    
+    
     return 0;
 }
