@@ -2,9 +2,7 @@ NAME = push_swap
 CFLAGS = -Wall -Werror -Wextra 
 CC = cc
 FT_PRINTF = ./ft_printf/libftprintf.a
-SRC = ./get_next_line/get_next_line.c \
-	./get_next_line/get_next_line_utils.c  \
-	push_swap.c split.c free.c\
+SRC = push_swap.c utils.c free.c parsing.c\
 	linkedlists.c
 OBJC =  $(SRC:.c=.o)
 
