@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 10:34:18 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/06/18 15:12:06 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/06/18 16:19:28 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ char *ft_strdup(char *str)
         p[i] = str[i];
         i++;
     }
-    str[i] = '\0';
-    return str;
+    p[i] = '\0';
+    return p;
 }
 char	*ft_strjoin(char *s1, char *s2)
 {
@@ -54,10 +54,6 @@ char	*ft_strjoin(char *s1, char *s2)
 
 	if (!s1 && s2)
 		return (ft_strdup(s2));
-	else if (!s2 && s1)
-		return (ft_strdup(s1));
-	else if (!s2 && !s1)
-		return (NULL);
 	ls1 = ft_strlen1(s1);
 	ls2 = ft_strlen1(s2);
 	ptr = (char *)malloc(sizeof(char) * (ls1 + ls2 + 1));
@@ -70,5 +66,5 @@ char	*ft_strjoin(char *s1, char *s2)
 }
 int ft_isdigit(int c)
 {
-    return (c >= 0 && c >= 9);
+    return (c >= '0' && c <= '9');
 }

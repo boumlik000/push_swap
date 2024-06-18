@@ -37,34 +37,37 @@ int	ft_isnotvalid(char *str)
 }
 char	*addspace(char *ptr)
 {
-	char	*p;
-
+	char	*p = NULL;
 	p = ft_strjoin(ptr, " ");
-	free(ptr);
+	if (!p)
+        free(ptr);
 	return (p);
 }
-char	*returnstr(int ac, char **av)
+char *returnstr(int ac, char **av)
 {
-	int		start;
-	// int		i;
-	char	*ptr;
-	char	*tmp;
+    int start;
+    char *ptr;
+    char *tmp;
+    char *joined;
 
-	// i = 0;
-	ptr = NULL;
-	start = 1;
-	while (start < ac)
-	{
-		if (ft_isnotvalid(av[start]))
-		{
-			ererr(ptr);
-		}
-		tmp = ptr;
-		ptr = addspace(ft_strjoin(av[start], ptr));
-		start++;
-		free(tmp);
-	}
-	return (ptr);
+    ptr = ft_strdup(""); // Initial empty string
+    if (!ptr)
+        ererr(NULL); // handle memory allocation failure
+    start = 1;
+    while (start < ac)
+    {
+        if (ft_isnotvalid(av[start]))
+            (free(ptr),ererr(NULL));
+        tmp = ptr;
+        joined = ft_strjoin(ptr, av[start]);
+        if (!joined)
+            (free(tmp),ererr(NULL));
+        ptr = addspace(joined);
+        free(joined);
+        free(tmp);
+        start++;
+    }
+    return ptr;
 }
 int	checklist(char *str)
 {

@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 10:28:25 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/06/18 14:37:52 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/06/18 16:28:54 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int main(int ac, char **av)
             return (free(str),0);
         else
             printf("%s\n",str);
-        
-        
+            
+        free(str);
         
     }
     
