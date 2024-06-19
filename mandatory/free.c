@@ -6,13 +6,13 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 11:33:32 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/05/15 15:07:18 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/06/19 14:27:33 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char **free_array_double(char **p){
+void free_array_double(char **p){
     int i = 0;
     while (p[i])
     {
@@ -20,6 +20,5 @@ char **free_array_double(char **p){
         i++;
     }
     free(p);
-    
-    return NULL;
+    // return NULL;
 }

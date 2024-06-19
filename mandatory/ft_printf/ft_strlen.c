@@ -6,13 +6,13 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 21:31:02 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/05/01 21:24:02 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/06/19 20:43:22 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_strlen1(const char *str)
+size_t	ft_strlen1(const char *str)
 {
 	int	i;
 

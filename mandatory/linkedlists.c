@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 13:48:09 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/06/19 12:12:42 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/06/19 19:05:31 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ void ft_lstadd_front(t_list **lst, t_list *new){
 }
 
 void ft_lstadd_back(t_list **lst, t_list *new){
-    if(*lst == NULL || new == NULL)
+    if(lst == NULL)
         return ;
-    if (lst == NULL)
-        return ;
+    if (*lst == NULL)
+        *lst = new;
     t_list *node = *lst;
     while (node->next)
-       node = node->next;
+        node = node->next;
     node->next = new;
     new->next = NULL;
 }
@@ -50,4 +50,20 @@ void ft_print_list(t_list *new)
         printf("%d\n",node->nbr);
         node = node->next;
     }
+}
+void	clear_list(t_list **lst)
+{
+	t_list	*tmp0;
+	t_list	*nextN;
+
+	if (!lst)
+		return ;
+	tmp0 = *lst;
+	while (tmp0)
+	{
+		nextN = tmp0->next;
+		free(tmp0);
+		tmp0 = nextN;
+	}
+	*lst = NULL;
 }
