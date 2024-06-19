@@ -6,11 +6,35 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 10:34:18 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/06/18 16:19:28 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/06/19 13:14:28 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+char **ft_split(char *str)
+{
+	int i = 0;
+	int k = 0;
+	char **split;
+	while (str[i] == ' ' || str[i] == '\t')
+		i++;
+	if (!(split = malloc(sizeof(char *) * 256)))
+		return NULL;
+	while (str[i])
+	{
+		int j =0;
+		if (!(split[k] = malloc(sizeof(char) * 40000)))
+			return NULL;
+		while (str[i] && str[i] != '\t' && str[i] != ' ' && str[i] != '\n')
+			split[k][j++] = str[i++];
+		split[k][j] ='\0';
+		k++;
+		while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
+			i++;
+	}
+	split[k] = NULL;
+	return split;
+}
 void	*ft_memcpy(void *dest, void *src, size_t n)
 {
 	unsigned char	*source;
@@ -64,7 +88,24 @@ char	*ft_strjoin(char *s1, char *s2)
 	ptr[ls1 + ls2] = '\0';
 	return (ptr);
 }
-int ft_isdigit(int c)
+int ft_atoi(char *str)
 {
-    return (c >= '0' && c <= '9');
+	int i = 0;
+	int j = 0;
+	int sign = 1;
+	while (str[i] == ' ' || str[i] =='\t')
+		i++;
+	if (str[i] == '+')
+		i++;
+	else if (str[i] == '-')
+	{
+		sign = -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		j = j * 10 + str[i] - '0';
+		i++;
+	}
+	return j * sign;
 }

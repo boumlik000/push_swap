@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 13:48:09 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/06/09 14:56:43 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/06/19 12:12:42 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void ft_lstadd_back(t_list **lst, t_list *new){
     new->next = NULL;
 }
 
-void fT_print_list(t_list *new)
+void ft_print_list(t_list *new)
 {
     t_list *node = new;
     while (node)
