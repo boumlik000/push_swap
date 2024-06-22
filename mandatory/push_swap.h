@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 11:10:03 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/06/19 20:35:32 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/06/21 23:12:52 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_list
 }t_list;
 
 // utils
+size_t ft_strlen(const char *str);
 int ft_atoi(char *str);
 char **ft_split(char *str);
 char *ft_strdup(char *str);
@@ -44,6 +45,7 @@ int	checklist(char *str);
 int check_double(t_list *stack,int nbr);
 int  check_max(char *str,long int nbr);
 char *ft_zlent(char *str);
+t_list *fillstack(char *str);
 //linkedlists
 t_list *ft_lstnew(int content);
 void ft_lstadd_front(t_list **lst, t_list *new);

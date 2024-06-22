@@ -6,11 +6,18 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 13:10:01 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/06/19 20:35:46 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/06/21 23:30:25 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "push_swap.h"
+size_t ft_strlen(const char *str)
+{
+	int i = 0;
+	while (str[i])
+		i++;
+	return i;
+}
 
 int ft_isdigit(int c)
 {
@@ -51,10 +58,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (!s)
 		return (NULL);
-	if (start >= ft_strlen1(s))
+	if (start >= ft_strlen(s))
 		return (ft_strdup("\0"));
-	if (start + len >= ft_strlen1(s))
-		substr = malloc(sizeof(char) * (ft_strlen1(s) - start + 1));
+	if (start + len >= ft_strlen(s))
+		substr = malloc(sizeof(char) * (ft_strlen(s) - start + 1));
 	else
 		substr = malloc(sizeof(char) * (len + 1));
 	if (!substr)
@@ -84,7 +91,7 @@ char *ft_zlent(char *str)
         i++;
     while (str[i] == '0' && str[i])
         i++;
-    return (ft_substr(str,i,ft_strlen1(str)));
+    return (ft_substr(str,i,ft_strlen(str)));
     
     
 }
@@ -92,7 +99,7 @@ int  check_max(char *str,long int nbr)
 {
     char *t = ft_zlent(str);
     
-    if (ft_strlen1(t) > 11 || nbr < INT_MIN || nbr > INT_MAX)
+    if (ft_strlen(t) > 11 || nbr < INT_MIN || nbr > INT_MAX)
         return(free(t),1);
     return(free(t),0);
 }

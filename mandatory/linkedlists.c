@@ -6,11 +6,11 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 13:48:09 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/06/19 19:05:31 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/06/21 23:31:45 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "push_swap.h"
 
 t_list *ft_lstnew(int content){
     t_list *node = NULL;
