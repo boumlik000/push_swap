@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 13:10:01 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/06/21 23:30:25 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/06/25 15:33:21 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,4 +102,32 @@ int  check_max(char *str,long int nbr)
     if (ft_strlen(t) > 11 || nbr < INT_MIN || nbr > INT_MAX)
         return(free(t),1);
     return(free(t),0);
+}
+int ft_max(t_list *stack_a)
+{
+	int max = stack_a->nbr;
+	while (stack_a)
+	{
+		if (max < stack_a->nbr)
+		{
+			max = stack_a->nbr;
+		}
+		stack_a = stack_a->next;
+	}
+	return max;
+}
+int ft_min(t_list *stack_a)
+{
+	if (!stack_a) // Check for null pointer
+        return 0;
+    int min = stack_a->nbr;
+    while (stack_a)
+    {
+        if (min > stack_a->nbr)
+        {
+            min = stack_a->nbr;
+        }
+        stack_a = stack_a->next;
+    }
+    return min;
 }

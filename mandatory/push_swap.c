@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 10:28:25 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/06/21 23:43:14 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/06/25 16:35:01 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,14 @@ int main(int ac, char **av)
         char *str = returnstr(ac,av);
         if (!checklist(str))
             return (free(str),0);
-
-            
         char ** split = ft_split(str);
         if (!split)
             ererr(str);
         //fill stack
         t_list *stack_a = fillstack(str); 
+        ft_print_list(stack_a);
+        sort_3(&stack_a);
+        // sort_4(&stack_a);
         ft_print_list(stack_a);
         
     }

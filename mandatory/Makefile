@@ -3,7 +3,8 @@ CFLAGS = -Wall -Werror -Wextra
 CC = cc
 FT_PRINTF = ./ft_printf/libftprintf.a
 SRC = push_swap.c utils.c utils2.c free.c parsing.c\
-	linkedlists.c fillstack.c
+	linkedlists.c fillstack.c moves.c\
+	sort3.c
 OBJC =  $(SRC:.c=.o)
 
 all: $(NAME)

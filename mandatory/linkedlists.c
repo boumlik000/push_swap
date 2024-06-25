@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 13:48:09 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/06/21 23:31:45 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/06/25 16:25:04 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,29 @@ t_list *ft_lstnew(int content){
 }
 
 void ft_lstadd_front(t_list **lst, t_list *new){
-    if(*lst == NULL || new == NULL)
-        return ;
-    if (lst == NULL)
-        return ;
     new->next = *lst;
     *lst = new;
 }
-
+int ft_lstsize(t_list **lst)
+{
+    int i = 0;
+    t_list *node = *lst;
+    while (node)
+    {
+        node = node->next;
+        i++;
+    }
+    return i;
+}
+t_list *ft_lstlast(t_list *lst)
+{
+    if (!lst)
+        return NULL;
+    
+    while (lst->next)
+        lst = lst->next;
+    return lst;
+}
 void ft_lstadd_back(t_list **lst, t_list *new){
     if(lst == NULL)
         return ;
@@ -47,9 +62,10 @@ void ft_print_list(t_list *new)
     t_list *node = new;
     while (node)
     {
-        printf("%d\n",node->nbr);
+        printf("%d-",node->nbr);
         node = node->next;
     }
+    printf("\n");
 }
 void	clear_list(t_list **lst)
 {
