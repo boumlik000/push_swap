@@ -6,25 +6,26 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 19:36:20 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/06/25 14:39:22 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/06/25 20:24:20 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void swapi(t_list **stack)
+void swapi(t_list **stack_a)
 {
     t_list *tmp;
     t_list *node1;
     t_list *node2;
-    
-    tmp = *stack;
+    if (!stack_a || !*stack_a || !((*stack_a)->next))
+		  return ;
+    tmp = *stack_a;
     node1 = tmp->next;
     node2 = node1->next;
     
     tmp->next =node2;
     node1->next = tmp;
-    *stack = node1; 
+    *stack_a = node1; 
 }
 
 void rotate(t_list **stack_a)
