@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 13:48:09 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/06/25 16:25:04 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/06/26 12:11:18 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void ft_print_list(t_list *new)
     t_list *node = new;
     while (node)
     {
-        printf("%d-",node->nbr);
+        printf(" |%d| ",node->nbr);
         node = node->next;
     }
     printf("\n");

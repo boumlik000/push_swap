@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 11:10:03 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/06/25 14:57:14 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/06/26 12:23:32 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,11 @@ int ft_min(t_list *stack_a);
 void rrotate(t_list **stack_a);
 void rotate(t_list **stack_a);
 void swapi(t_list **stack);
-
+void push(t_list **stack_a,t_list **stack_b);
 //sort
 void sort_3(t_list **stack_a);
 void sort_4(t_list **stack_a);
+void sort_5(t_list **stack_a);
 // free
 void free_array_double(char **p);
 #endif

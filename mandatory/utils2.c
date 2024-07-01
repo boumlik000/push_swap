@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 13:10:01 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/06/25 15:33:21 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/06/26 12:23:29 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ int  check_max(char *str,long int nbr)
 {
     char *t = ft_zlent(str);
     
-    if (ft_strlen(t) > 11 || nbr < INT_MIN || nbr > INT_MAX)
+    if (ft_strlen(t) > 11 || nbr < -2147483648 || nbr > 2147483647)
         return(free(t),1);
     return(free(t),0);
 }

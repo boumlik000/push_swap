@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 14:27:19 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/06/25 20:35:49 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/06/26 11:57:32 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,18 @@ void sort_4(t_list **stack_a)
     
     while (min != (*stack_a)->nbr)
         rotate(stack_a);
-    t_list *tmp = *stack_a;
-    *stack_a = (*stack_a)->next;
-    tmp->next = NULL;
-    ft_lstadd_front(&stack_b, tmp);
+    push(stack_a,&stack_b);
     sort_3(stack_a);
-    ft_lstadd_front(stack_a,stack_b);
+    push(&stack_b,stack_a);
+}
+void sort_5(t_list **stack_a)
+{
+    t_list *stack_b = NULL;
+    int min = ft_min(*stack_a);
+    
+    while (min != (*stack_a)->nbr)
+        rotate(stack_a);
+    push(stack_a,&stack_b);
+    sort_4(stack_a);
+    push(&stack_b,stack_a);
 }
