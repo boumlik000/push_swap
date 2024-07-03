@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 10:34:18 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/06/21 23:30:20 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/07/03 17:04:42 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,10 @@ char	*ft_strjoin(char *s1, char *s2)
 
 	if (!s1 && s2)
 		return (ft_strdup(s2));
+	else if (!s2 && s1)
+		return (ft_strdup(s1));
+	else if (!s2 && !s1)
+		return (NULL);
 	ls1 = ft_strlen(s1);
 	ls2 = ft_strlen(s2);
 	ptr = (char *)malloc(sizeof(char) * (ls1 + ls2 + 1));

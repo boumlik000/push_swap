@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 11:10:03 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/06/26 12:23:32 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/07/03 16:15:50 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ int ft_lstsize(t_list **lst);
 t_list *ft_lstlast(t_list *lst);
 int ft_max(t_list *stack_a);
 int ft_min(t_list *stack_a);
+int ft_issorted(t_list *stack_a);
 // moves
 void rrotate(t_list **stack_a);
 void rotate(t_list **stack_a);
