@@ -6,13 +6,13 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 19:36:20 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/07/03 16:11:36 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/07/05 09:31:24 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void swapi(t_list **stack_a)
+void swapi(t_list **stack_a,char stack_name)
 {
     t_list *tmp;
     t_list *node1;
@@ -25,22 +25,29 @@ void swapi(t_list **stack_a)
     
     tmp->next =node2;
     node1->next = tmp;
-    *stack_a = node1; 
-    printf("sa\n");
+    *stack_a = node1;
+    if (stack_name == 'a')
+      printf("sa\n");
+    else if (stack_name == 'b')
+      printf("sb\n");
 }
 
-void rotate(t_list **stack_a)
+void rotate(t_list **stack_a,char stack_name)
 {
-    t_list *head;
-    if (!stack_a || !*stack_a || !((*stack_a)->next))
-		return ;
-    head = *stack_a;
-    *stack_a = head->next;
-    head->next = NULL;
-    ft_lstadd_back(stack_a,head);
+  t_list *head;
+  if (!stack_a || !*stack_a || !((*stack_a)->next))
+  return ;
+  head = *stack_a;
+  *stack_a = head->next;
+  head->next = NULL;
+  ft_lstadd_back(stack_a,head);
+  if (stack_name == 'a')
     printf("ra\n");
+  else if(stack_name == 'b')
+    printf("rb\n");
+      
 }
-void rrotate(t_list **stack_a)
+void rrotate(t_list **stack_a,char stack_name)
 {
     t_list *ptr;
     t_list *last;
@@ -52,21 +59,22 @@ void rrotate(t_list **stack_a)
 	last = ft_lstlast(*stack_a);
 	ptr->next = NULL;
 	ft_lstadd_front(stack_a,last);
-  printf("rra\n");
+  if (stack_name == 'a')
+    printf("rra\n");
+  else if(stack_name == 'b')
+    printf("rrb\n");
 }
-void push(t_list **stack_a,t_list **stack_b)
+void push(t_list **stack_a,t_list **stack_b,char stack_name)
 {
   t_list *node;
-  if (!stack_a || !*stack_a)
-    return ;
+  if (!stack_a || !*stack_a || !stack_b)
+        return ;
   node = *stack_a;
   *stack_a = node->next;
   node->next = NULL;
   ft_lstadd_front(stack_b,node);
-  printf("pb\n");
-}
-void rb(t_list **stack_b)
-{
-    rotate(stack_b);
-    ft_printf("rb\n");
+  if (stack_name == 'a')
+    printf("pa\n");
+  else if (stack_name == 'b')
+    printf("pb\n");
 }

@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 13:48:09 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/07/03 16:15:29 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/07/05 14:24:53 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_list *ft_lstnew(int content){
     t_list *node = NULL;
-    if(!(node = malloc(sizeof(size_t))))
+    if(!(node = malloc(sizeof(t_list))))
         return NULL;
     node->nbr = content;
     node->next = NULL;
@@ -62,26 +62,10 @@ void ft_print_list(t_list *new)
     t_list *node = new;
     while (node)
     {
-        printf(" |%d| ",node->nbr);
+        printf("%d- %d| ",node->index,node->nbr);
         node = node->next;
     }
     printf("\n");
-}
-void	clear_list(t_list **lst)
-{
-	t_list	*tmp0;
-	t_list	*nextN;
-
-	if (!lst)
-		return ;
-	tmp0 = *lst;
-	while (tmp0)
-	{
-		nextN = tmp0->next;
-		free(tmp0);
-		tmp0 = nextN;
-	}
-	*lst = NULL;
 }
 int ft_issorted(t_list *stack_a)
 {

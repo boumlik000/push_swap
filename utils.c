@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 10:34:18 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/07/03 17:04:42 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/07/05 14:54:33 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ char **ft_split(char *str)
 	char **split;
 	while (str[i] == ' ' || str[i] == '\t')
 		i++;
-	if (!(split = malloc(sizeof(char *) * 256)))
+	if (!(split = malloc(sizeof(char *) * 501)))
 		return NULL;
 	while (str[i])
 	{
 		int j =0;
-		if (!(split[k] = malloc(sizeof(char) * 40000)))
+		if (!(split[k] = malloc(sizeof(char) * 1111111)))
 			return NULL;
 		while (str[i] && str[i] != '\t' && str[i] != ' ' && str[i] != '\n')
 			split[k][j++] = str[i++];

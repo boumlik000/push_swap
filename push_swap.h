@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 11:10:03 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/07/03 16:15:50 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/07/05 09:56:37 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 typedef struct s_list
 {
     int nbr;
+    int index;
     struct s_list *next;
 }t_list;
 
@@ -57,15 +58,22 @@ t_list *ft_lstlast(t_list *lst);
 int ft_max(t_list *stack_a);
 int ft_min(t_list *stack_a);
 int ft_issorted(t_list *stack_a);
+void	set_index(t_list **stack);
+int max_index(t_list **stack_b);
+void sort_more(t_list **stack_a,t_list **stack_b);
+int ft_range(t_list **stack_a);
+void sendto_a(t_list **stack_a,t_list **stack_b);
+void	reset_index(t_list **stack);
 // moves
-void rrotate(t_list **stack_a);
-void rotate(t_list **stack_a);
-void swapi(t_list **stack);
-void push(t_list **stack_a,t_list **stack_b);
+void rrotate(t_list **stack_a,char stack_name);
+void rotate(t_list **stack_a,char stack_name);
+void swapi(t_list **stack,char stack_name);
+void push(t_list **stack_a,t_list **stack_b,char stack_name);
 //sort
 void sort_3(t_list **stack_a);
 void sort_4(t_list **stack_a);
 void sort_5(t_list **stack_a);
 // free
+void free_everything(t_list **stack_a,char **split,char *str);
 void free_array_double(char **p);
 #endif

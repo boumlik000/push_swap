@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 14:27:19 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/06/26 11:57:32 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/07/04 09:08:45 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ void sort_3(t_list **stack_a)
     int max = ft_max(*stack_a);
     t_list *node = *stack_a;
     if (max == node->nbr)
-        rotate(stack_a);
+        rotate(stack_a,'a');
     else if (max == node->next->nbr)
-        rrotate(stack_a);
+        rrotate(stack_a,'a');
     node = *stack_a;   
     if (node->nbr > node->next->nbr)
-        swapi(stack_a);
+        swapi(stack_a,'a');
 }
 void sort_4(t_list **stack_a)
 {
@@ -32,10 +32,10 @@ void sort_4(t_list **stack_a)
     int min = ft_min(*stack_a);
     
     while (min != (*stack_a)->nbr)
-        rotate(stack_a);
-    push(stack_a,&stack_b);
+        rotate(stack_a,'a');
+    push(stack_a,&stack_b,'b');
     sort_3(stack_a);
-    push(&stack_b,stack_a);
+    push(&stack_b,stack_a,'a');
 }
 void sort_5(t_list **stack_a)
 {
@@ -43,8 +43,8 @@ void sort_5(t_list **stack_a)
     int min = ft_min(*stack_a);
     
     while (min != (*stack_a)->nbr)
-        rotate(stack_a);
-    push(stack_a,&stack_b);
+        rotate(stack_a,'a');
+    push(stack_a,&stack_b,'b');
     sort_4(stack_a);
-    push(&stack_b,stack_a);
+    push(&stack_b,stack_a,'a');
 }
