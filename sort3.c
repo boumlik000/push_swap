@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 14:27:19 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/07/04 09:08:45 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/07/07 18:26:29 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,27 +24,19 @@ void sort_3(t_list **stack_a)
     if (node->nbr > node->next->nbr)
         swapi(stack_a,'a');
 }
-void sort_4(t_list **stack_a)
+
+void sort(t_list **stack_a)
 {
-    //the idea is to take the min number and put it in stackb 
-    //then sort3 stack a
-    t_list *stack_b = NULL;
-    int min = ft_min(*stack_a);
-    
-    while (min != (*stack_a)->nbr)
-        rotate(stack_a,'a');
-    push(stack_a,&stack_b,'b');
-    sort_3(stack_a);
-    push(&stack_b,stack_a,'a');
-}
-void sort_5(t_list **stack_a)
-{
-    t_list *stack_b = NULL;
-    int min = ft_min(*stack_a);
-    
-    while (min != (*stack_a)->nbr)
-        rotate(stack_a,'a');
-    push(stack_a,&stack_b,'b');
-    sort_4(stack_a);
-    push(&stack_b,stack_a,'a');
+    t_list *stack_b;
+    stack_b = NULL;
+    int i;
+    i =  ft_lstsize(stack_a);
+    if (i <= 3 && i > 1)
+        sort_3(stack_a);
+    else if (i == 4 || i == 5)
+        sort_five(stack_a,&stack_b);
+    // else if (i == 5)
+    //     sort_5(stack_a);
+    else 
+        sort_more(stack_a,&stack_b);
 }

@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 11:10:03 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/07/05 09:56:37 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/07/07 18:12:46 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ typedef struct s_list
 }t_list;
 
 // utils
+int count_words(char *str);
+int word_length(char *str, int i);
 size_t ft_strlen(const char *str);
 int ft_atoi(char *str);
 char **ft_split(char *str);
@@ -73,7 +75,14 @@ void push(t_list **stack_a,t_list **stack_b,char stack_name);
 void sort_3(t_list **stack_a);
 void sort_4(t_list **stack_a);
 void sort_5(t_list **stack_a);
+void sort(t_list **stack_a);
 // free
 void free_everything(t_list **stack_a,char **split,char *str);
 void free_array_double(char **p);
+
+int min_index(t_list *stack_a);
+int min(t_list *stack);
+void sort_five(t_list **stack_a,t_list **stack_b);
+
+
 #endif

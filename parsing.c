@@ -80,7 +80,7 @@ int	checklist(char *str)
 	{
 		if ((str[i] == '-' || str[i] == '+'))
 		{
-			if ((i >= 1 && str[i - 1] != ' ') || !ft_isdigit(str[i + 1]))
+			if ((i >= 1 && str[i - 1] != ' ') ||  !ft_isdigit(str[i + 1]))
 				ererr(str);
 		}
 		else if (!ft_isdigit(str[i]) && !(str[i] == '-' || str[i] == '+' || str[i] == ' '))
@@ -88,4 +88,5 @@ int	checklist(char *str)
 		i++;
 	}
 	return (1);
+		exit(1);
 }
