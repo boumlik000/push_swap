@@ -6,23 +6,27 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 13:10:01 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/07/04 08:47:23 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/07/07 23:45:08 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-size_t ft_strlen(const char *str)
+
+size_t	ft_strlen(const char *str)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	while (str[i])
 		i++;
-	return i;
+	return (i);
 }
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    return (c >= '0' && c <= '9');
+	return (c >= '0' && c <= '9');
 }
+
 void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*vd;
@@ -36,6 +40,7 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
+
 void	*ft_calloc(size_t count, size_t size)
 {
 	size_t	i;
@@ -50,6 +55,7 @@ void	*ft_calloc(size_t count, size_t size)
 	ft_bzero(x, i);
 	return (x);
 }
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;

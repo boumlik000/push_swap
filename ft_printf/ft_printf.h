@@ -18,13 +18,13 @@
 # include <string.h>
 # include <unistd.h>
 
-int	ft_putchar1(int c);
-int	ft_putstr1(char *str);
-int	ft_putnbr1(int n);
-int	ft_posputnbr1(unsigned int n);
-int	ft_putnbr_base1(unsigned long nbr, char *base, int i);
+int		ft_putchar1(int c);
+int		ft_putstr1(char *str);
+int		ft_putnbr1(int n);
+int		ft_posputnbr1(unsigned int n);
+int		ft_putnbr_base1(unsigned long nbr, char *base, int i);
 size_t	ft_strlen1(const char *str);
-int	ft_strchr1(const char *s, int c);
-int	ft_printf(const char *f, ...);
+int		ft_strchr1(const char *s, int c);
+int		ft_printf(const char *f, ...);
 
 #endif

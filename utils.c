@@ -6,11 +6,12 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 10:34:18 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/07/07 17:30:23 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/07/07 23:44:52 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 void	*ft_memcpy(void *dest, void *src, size_t n)
 {
 	unsigned char	*source;
@@ -31,21 +32,26 @@ void	*ft_memcpy(void *dest, void *src, size_t n)
 	}
 	return (dest);
 }
-char *ft_strdup(char *str)
+
+char	*ft_strdup(char *str)
 {
-    int i = ft_strlen(str);
-    char *p;
-    if (!(p = malloc(sizeof(char) * i + 1)))
-        return NULL;
-    i = 0;    
-    while (str[i])
-    {
-        p[i] = str[i];
-        i++;
-    }
-    p[i] = '\0';
-    return p;
+	int		i;
+	char	*p;
+
+	i = ft_strlen(str);
+	p = malloc(sizeof(char) * i + 1);
+	if (!p)
+		return (NULL);
+	i = 0;
+	while (str[i])
+	{
+		p[i] = str[i];
+		i++;
+	}
+	p[i] = '\0';
+	return (p);
 }
+
 char	*ft_strjoin(char *s1, char *s2)
 {
 	size_t	ls1;
@@ -68,12 +74,17 @@ char	*ft_strjoin(char *s1, char *s2)
 	ptr[ls1 + ls2] = '\0';
 	return (ptr);
 }
-int ft_atoi(char *str)
+
+int	ft_atoi(char *str)
 {
-	int i = 0;
-	int j = 0;
-	int sign = 1;
-	while (str[i] == ' ' || str[i] =='\t')
+	int	i;
+	int	j;
+	int	sign;
+
+	i = 0;
+	j = 0;
+	sign = 1;
+	while (str[i] == ' ' || str[i] == '\t')
 		i++;
 	if (str[i] == '+')
 		i++;
@@ -87,5 +98,5 @@ int ft_atoi(char *str)
 		j = j * 10 + str[i] - '0';
 		i++;
 	}
-	return j * sign;
+	return (j * sign);
 }

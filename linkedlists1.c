@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   linkedlists1.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/10 10:28:25 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/07/09 03:15:42 by mboumlik         ###   ########.fr       */
+/*   Created: 2024/07/09 03:19:58 by mboumlik          #+#    #+#             */
+/*   Updated: 2024/07/09 03:20:42 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+void	ft_print_list(t_list *new)
 {
-	char	*str;
-	char	**split;
-	t_list	*stack_a;
+	t_list	*node;
 
-	if (ac > 1)
+	node = new;
+	while (node)
 	{
-		str = returnstr(ac, av);
-		if (!checklist(str))
-			return (free(str), 0);
-		split = ft_split(str, ' ');
-		if (!split)
-			ererr(str);
-		stack_a = fillstack(str, split);
-		set_index(&stack_a);
-		if (ft_issorted(stack_a) == 1)
-		{
-			free_everything(&stack_a, split, str);
-			return (0);
-		}
-		sort(&stack_a);
-		free_everything(&stack_a, split, str);
+		printf("%d- %d| ", node->index, node->nbr);
+		node = node->next;
 	}
-	return (0);
+	printf("\n");
+}
+
+int	ft_issorted(t_list *stack_a)
+{
+	t_list	*node;
+
+	node = stack_a;
+	while (node->next)
+	{
+		if (node->nbr > node->next->nbr)
+			return (0);
+		node = node->next;
+	}
+	return (1);
 }
