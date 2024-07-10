@@ -4,11 +4,16 @@ NAMEB = cheker
 CFLAGS = -Wall -Werror -Wextra 
 CC = cc
 FT_PRINTF = ./ft_printf/libftprintf.a
+# FT_PRINTF = ./ft_printf/libftprintf.a
 
 SRC = push_swap.c utils.c utils2.c utils3.c free.c parsing.c\
 	linkedlists.c linkedlists1.c fillstack.c moves.c index.c ft_split.c\
 	sort3.c sort_more.c sort5.c 
-SRCB = push_swap_bonus.c
+
+SRCB = checker.c utils.c utils2.c utils3.c free.c parsing.c\
+	linkedlists.c linkedlists1.c fillstack.c moves.c index.c ft_split.c\
+	sort3.c sort_more.c sort5.c ft_strcmp.c get_next_line.c\
+	get_next_line_utils.c
 
 
 OBJC =  $(SRC:.c=.o)
@@ -42,6 +47,7 @@ fclean: clean
 
 re: fclean 
 	@-$(MAKE) all
+	@-$(MAKE) bonus
 	@-$(MAKE) clean
 	
 

@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 02:49:50 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/07/10 02:50:31 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/07/10 18:31:40 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_BONUS_H
 
 # include "./ft_printf/ft_printf.h"
+# include "./get_next_line.h"
 # include <limits.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -27,6 +28,7 @@ typedef struct s_list
 }					t_list;
 
 // utils
+int	ft_strcmp(char *s1, char *s2);
 int					words_nbr(const char *str, char s);
 char				*malloc_word(const char *s, int b, int e);
 char				**list(char **lst, const char *s, char c);
@@ -68,14 +70,12 @@ int					ft_range(t_list **stack_a);
 void				sendto_a(t_list **stack_a, t_list **stack_b);
 void				reset_index(t_list **stack);
 // moves
-void				rrotate(t_list **stack_a, char stack_name);
-void				rotate(t_list **stack_a, char stack_name);
-void				swapi(t_list **stack, char stack_name);
+void				rrotate(t_list **stack_a);
+void				rotate(t_list **stack_a);
+void				swapi(t_list **stack_a);
 void				push(t_list **stack_a, t_list **stack_b, char stack_name);
 // sort
 void				sort_3(t_list **stack_a);
-void				sort_4(t_list **stack_a);
-void				sort_5(t_list **stack_a);
 void				sort(t_list **stack_a);
 // free
 void				free_everything(t_list **stack_a, char **split, char *str);
@@ -86,4 +86,8 @@ int					min_index(t_list *stack_a);
 int					min(t_list *stack);
 void				sort_five(t_list **stack_a, t_list **stack_b);
 
+
+//bonus
+void readfile(t_list **stack_a,t_list **stack_b);
+void movements(char *str,t_list **stack_a,t_list **stack_b);
 #endif
