@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 22:53:14 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/07/09 03:14:38 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/07/09 23:03:42 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ t_list	*fillstack(char *str, char **p)
 {
 	t_list	*stack_a;
 	char	**split;
-	int		i;
-	int		number;
+	long		i;
+	long		number;
 
 	stack_a = NULL;
 	split = ft_split(str, ' ');

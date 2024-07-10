@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/15 11:10:03 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/07/09 23:04:38 by mboumlik         ###   ########.fr       */
+/*   Created: 2024/07/10 02:49:50 by mboumlik          #+#    #+#             */
+/*   Updated: 2024/07/10 02:50:31 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
 
 # include "./ft_printf/ft_printf.h"
 # include <limits.h>

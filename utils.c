@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 10:34:18 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/07/07 23:44:52 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/07/09 23:04:05 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,11 +75,11 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (ptr);
 }
 
-int	ft_atoi(char *str)
+long	ft_atoi(char *str)
 {
-	int	i;
-	int	j;
-	int	sign;
+	long	i;
+	long	j;
+	long	sign;
 
 	i = 0;
 	j = 0;
