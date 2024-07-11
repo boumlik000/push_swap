@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 02:30:30 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/07/11 00:58:47 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/07/11 17:30:13 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	movements(char *str, t_list **stack_a, t_list **stack_b)
 		rrr(stack_a, stack_b);
 	else
 		(clear_list(stack_b), free_everything(stack_a, NULL, str), write(2,
-				"Error\n", 6));
+				"Error\n", 6), exit(1));
 }
 
 void	readfile(t_list **stack_a, t_list **stack_b)
