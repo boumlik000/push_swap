@@ -1,5 +1,5 @@
 NAME = push_swap
-NAMEB = cheker
+NAMEB = checker
 
 CFLAGS = -Wall -Werror -Wextra 
 CC = cc
@@ -11,8 +11,8 @@ SRC = push_swap.c utils.c utils2.c utils3.c free.c parsing.c\
 	sort3.c sort_more.c sort5.c 
 
 SRCB = checker.c utils.c utils2.c utils3.c free.c parsing.c\
-	linkedlists.c linkedlists1.c fillstack.c moves.c index.c ft_split.c\
-	sort3.c sort_more.c sort5.c ft_strcmp.c get_next_line.c\
+	linkedlists.c linkedlists1.c fillstack.c moves_bonus.c index.c ft_split.c\
+	sort3.c sort_more.c sort5.c ft_strcmp.c get_next_line.c moves_bonus2.c \
 	get_next_line_utils.c
 
 

@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 02:49:50 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/07/10 18:31:40 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/07/10 22:51:58 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ typedef struct s_list
 }					t_list;
 
 // utils
-int	ft_strcmp(char *s1, char *s2);
+int					ft_strcmp(char *s1, char *s2);
 int					words_nbr(const char *str, char s);
 char				*malloc_word(const char *s, int b, int e);
 char				**list(char **lst, const char *s, char c);
 size_t				ft_strlen(const char *str);
-long					ft_atoi(char *str);
+long				ft_atoi(char *str);
 char				**ft_split(char const *s, char c);
 char				*ft_strdup(char *str);
 void				*ft_memcpy(void *dest, void *src, size_t n);
@@ -63,6 +63,7 @@ t_list				*ft_lstlast(t_list *lst);
 int					ft_max(t_list *stack_a);
 int					ft_min(t_list *stack_a);
 int					ft_issorted(t_list *stack_a);
+int					ft_issorted1(t_list *stack_a);
 void				set_index(t_list **stack);
 int					max_index(t_list **stack_b);
 void				sort_more(t_list **stack_a, t_list **stack_b);
@@ -73,7 +74,10 @@ void				reset_index(t_list **stack);
 void				rrotate(t_list **stack_a);
 void				rotate(t_list **stack_a);
 void				swapi(t_list **stack_a);
-void				push(t_list **stack_a, t_list **stack_b, char stack_name);
+void				push(t_list **stack_a, t_list **stack_b);
+void				rrr(t_list **stack_a, t_list **stack_b);
+void				rr(t_list **stack_a, t_list **stack_b);
+void				ss(t_list **stack_a, t_list **stack_b);
 // sort
 void				sort_3(t_list **stack_a);
 void				sort(t_list **stack_a);
@@ -86,8 +90,7 @@ int					min_index(t_list *stack_a);
 int					min(t_list *stack);
 void				sort_five(t_list **stack_a, t_list **stack_b);
 
-
-//bonus
-void readfile(t_list **stack_a,t_list **stack_b);
-void movements(char *str,t_list **stack_a,t_list **stack_b);
+// bonus
+void				readfile(t_list **stack_a, t_list **stack_b);
+void				movements(char *str, t_list **stack_a, t_list **stack_b);
 #endif

@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 23:07:48 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/07/09 03:14:22 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/07/11 01:00:32 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 int	words_nbr(const char *str, char s)
 {
-	int	i;
-	int	words_count;
-	int	start;
-
+	int (i), (words_count), (start);
 	i = 0;
 	words_count = 0;
 	while (str[i])

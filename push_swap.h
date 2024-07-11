@@ -31,7 +31,7 @@ int					words_nbr(const char *str, char s);
 char				*malloc_word(const char *s, int b, int e);
 char				**list(char **lst, const char *s, char c);
 size_t				ft_strlen(const char *str);
-long					ft_atoi(char *str);
+long				ft_atoi(char *str);
 char				**ft_split(char const *s, char c);
 char				*ft_strdup(char *str);
 void				*ft_memcpy(void *dest, void *src, size_t n);

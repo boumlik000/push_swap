@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 11:33:32 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/07/09 03:23:32 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/07/11 00:17:37 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ void	free_array_double(char **p)
 	int	i;
 
 	i = 0;
+	if (!p)
+		return ;
 	while (p[i])
 	{
 		free(p[i]);

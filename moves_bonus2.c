@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   moves_bonus2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/10 17:00:32 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/07/11 01:00:13 by mboumlik         ###   ########.fr       */
+/*   Created: 2024/07/11 00:57:16 by mboumlik          #+#    #+#             */
+/*   Updated: 2024/07/11 00:57:38 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
-int	ft_strcmp(char *s1, char *s2)
+void	ss(t_list **stack_a, t_list **stack_b)
 {
-	int	i;
+	swapi(stack_a);
+	swapi(stack_b);
+}
 
-	i = 0;
-	while (s1[i] || s2[i])
-	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-		i++;
-	}
-	return (0);
+void	rr(t_list **stack_a, t_list **stack_b)
+{
+	rotate(stack_a);
+	rotate(stack_b);
+}
+
+void	rrr(t_list **stack_a, t_list **stack_b)
+{
+	rrotate(stack_a);
+	rrotate(stack_b);
 }

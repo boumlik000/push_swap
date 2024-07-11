@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 03:19:58 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/07/09 03:20:42 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/07/11 00:56:42 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,20 @@ int	ft_issorted(t_list *stack_a)
 		node = node->next;
 	}
 	return (1);
+}
+
+int	ft_issorted1(t_list *stack_a)
+{
+	t_list	*node;
+
+	node = stack_a;
+	if (ft_lstsize(&stack_a) == 0)
+		return (write(1, "KO\n", 3), 0);
+	while (node && node->next)
+	{
+		if (node->nbr > node->next->nbr)
+			return (write(1, "KO\n", 3), 0);
+		node = node->next;
+	}
+	return (write(1, "OK\n", 3), 1);
 }

@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 14:16:29 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/07/10 18:31:43 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/07/11 00:59:21 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	rrotate(t_list **stack_a)
 	ft_lstadd_front(stack_a, last);
 }
 
-void	push(t_list **stack_a, t_list **stack_b, char stack_name)
+void	push(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*node;
 
@@ -65,8 +65,4 @@ void	push(t_list **stack_a, t_list **stack_b, char stack_name)
 	*stack_a = node->next;
 	node->next = NULL;
 	ft_lstadd_front(stack_b, node);
-	if (stack_name == 'a')
-		ft_printf("pa\n");
-	else if (stack_name == 'b')
-		ft_printf("pb\n");
 }

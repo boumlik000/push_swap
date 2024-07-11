@@ -16,8 +16,8 @@ t_list	*fillstack(char *str, char **p)
 {
 	t_list	*stack_a;
 	char	**split;
-	long		i;
-	long		number;
+	long	i;
+	long	number;
 
 	stack_a = NULL;
 	split = ft_split(str, ' ');

@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 10:28:25 by mboumlik          #+#    #+#             */
-/*   Updated: 2024/07/10 18:13:12 by mboumlik         ###   ########.fr       */
+/*   Updated: 2024/07/11 00:44:36 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int	main(int ac, char **av)
 			return (0);
 		}
 		sort(&stack_a);
-		ft_print_list(stack_a);
 		free_everything(&stack_a, split, str);
 	}
 	return (0);
